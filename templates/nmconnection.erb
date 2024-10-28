@@ -1,0 +1,13 @@
+[connection]
+id=<%= @interface_name %>
+type=ethernet
+interface-name=<%= @interface_name %>
+
+[ipv4]
+method=manual
+address1=<%= @ip_address %>,<%= @gateway %>
+<% if @dns_servers && !@dns_servers.empty? %>
+dns=<%= @dns_servers.join(';') %>
+<% end %>
+may-fail=false
+
